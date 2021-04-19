@@ -83,17 +83,21 @@ function draw() {
 }
 
 function keyPressed() {
-	
-	if(keyDown(UP_ARROW)){
-      packageSprite.velocityY=2;
+
+    if(keyCode===RIGHT_ARROW){
+      helicopterSprite.x+=20;
+	  packageBody.x=helicopterSprite.x;
+	  Matter.Body.translate(packageBody,translation);
 	}
 
-	if(keyDown(LEFT_ARROW)){
-      helicopterSprite.velocityX=-1;
+	if(keyCode===LEFT_ARROW){
+      helicopterSprite.x-=20;
+	  packageBody.x=helicopterSprite.x;
+	   Matter.Body.translate(packageBody,translation);
 	}
 
-    if(keyDown(RIGHT_ARROW)){
-      helicopterSprite.velocityX=1;
+    if(keyCode===DOWN_ARROW){
+      Matter.Body.setStatic(packageBody,false);
+	  // Matter.Body.translate(packageBody,translation);
 	}
-
 }
