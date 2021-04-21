@@ -86,13 +86,15 @@ function keyPressed() {
 
     if(keyCode===RIGHT_ARROW){
       helicopterSprite.x+=20;
-	  packageBody.x=helicopterSprite.x;
+	 // packageBody.x=helicopterSprite.x;
+	     translation={x:-20,y:0}
 	  Matter.Body.translate(packageBody,translation);
 	}
 
 	if(keyCode===LEFT_ARROW){
       helicopterSprite.x-=20;
-	  packageBody.x=helicopterSprite.x;
+		 translation={x:20,y:0}
+	  //packageBody.x=helicopterSprite.x;
 	   Matter.Body.translate(packageBody,translation);
 	}
 
